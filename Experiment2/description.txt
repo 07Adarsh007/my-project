@@ -1,0 +1,163 @@
+SIMPLE BANKING UI TEST CASES & VALIDATIONS
+
+1. FIELD: Balance Display
+Requirement:
+
+Should show the current balance (default is $0)
+
+It’s a non-editable display element, not an input field.
+
+Display format must begin with $ followed by numeric value (e.g., $100)
+
+VALID DISPLAYS:
+
+$0 – Default value
+
+$500.00 – Valid formatted balance
+
+$1234.56 – Valid with decimals
+
+INVALID DISPLAYS (UI/logic-side errors):
+
+500 – Missing $ sign
+
+"$abc" – Alphabetical value should not occur
+
+"-100" – Negative value should not be shown unless overdraft is supported (not in this UI)
+
+2. ELEMENT: Deposit Button
+Requirement:
+
+Should trigger deposit functionality (no actual JS here)
+
+Visible and properly styled
+
+Expected to be clickable
+
+VALID INPUTS (Expected future behavior if interactive):
+
+User clicks → deposits fixed amount → balance increases
+
+INVALID STATES:
+
+Button missing from UI
+
+Button styled but not readable (e.g., transparent or overlapping)
+
+Button inaccessible by keyboard (future concern if accessible design considered)
+
+3. ELEMENT: Withdraw Button
+Requirement:
+
+Should trigger withdrawal functionality (hypothetical without JS)
+
+Visible and styled identically to deposit button
+
+Must be distinguishable from the deposit button
+
+VALID INPUTS:
+
+Button exists, labeled "Withdraw", styled uniformly
+
+INVALID STATES:
+
+Label mismatch (e.g., “Withdrawl” typo)
+
+No visual feedback when hovered/clicked (not required, but improves UX)
+
+4. FORM SUBMISSION:
+No form submission in current design (pure UI)
+
+No validations handled due to absence of input fields or JS
+
+Considered as a static UI mockup for concept demonstration
+
+CSS STYLING BREAKDOWN: A Structured Overview
+1. ELEMENT: body (Page Layout)
+Purpose: Positions the UI on the screen and sets a clean background.
+
+Properties & Effects:
+
+margin: 0;: Removes default browser margin
+
+display: flex; justify-content: center; align-items: center;: Centers the UI both vertically and horizontally
+
+height: 100vh;: Makes sure UI covers full height of the viewport
+
+background: #f0f4f8;: Applies a soft blue-gray color for minimal distraction
+
+2. ELEMENT: .card (Main Banking UI Container)
+Purpose: Holds the balance and buttons, visually like a card or ATM screen.
+
+Properties & Effects:
+
+background: #ffffff;: Clean white card background
+
+padding: 30px 40px;: Spacious internal layout
+
+border-radius: 12px;: Soft rounded edges
+
+box-shadow: 0 6px 18px rgba(0,0,0,0.1);: Adds depth for a raised look
+
+text-align: center;: Centers all contents within the card
+
+min-width: 300px;: Ensures proper layout even on small screens
+
+3. ELEMENT: .balance (Balance Display)
+Purpose: Visually represents the user's account balance.
+
+Properties & Effects:
+
+font-size: 36px;: Large, easy-to-read amount
+
+color: #2d3748;: Dark gray for good contrast
+
+margin-bottom: 25px;: Space between balance and buttons
+
+4. ELEMENT: .actions (Button Wrapper)
+Purpose: Organizes the two buttons side by side.
+
+Properties & Effects:
+
+display: flex; gap: 15px;: Buttons placed in a row with spacing
+
+justify-content: center;: Center alignment
+
+5. ELEMENT: .btn (Base Button Style)
+Purpose: Shared styles for both deposit and withdraw buttons.
+
+Properties & Effects:
+
+padding: 10px 20px;: Ample clickable area
+
+font-size: 16px; font-weight: 600;: Readable, bold text
+
+border: none;: Clean appearance
+
+border-radius: 6px;: Soft look
+
+cursor: pointer;: Indicates interactivity
+
+6. ELEMENTS: .deposit-btn & .withdraw-btn
+Purpose: Distinguish between deposit and withdrawal actions.
+
+deposit-btn:
+
+background: #38a169; – Green for positive action
+
+color: white;
+
+withdraw-btn:
+
+background: #e53e3e; – Red for deduction
+
+color: white;
+
+LEARNING OUTCOMES:
+How to build a clean and minimal Banking UI layout using only HTML and CSS.
+
+How to center UI elements using Flexbox effectively.
+
+Understand semantic UI division using containers like .card, .balance, .actions.
+
+Learn how to apply modern UI styles such as shadows, border-radius, and responsive sizing without using JavaScript.
