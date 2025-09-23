@@ -1,21 +1,20 @@
-import "./App.css";
-import ProductCard from "./components/ProductCard.jsx";
+// src/App.jsx
+import React from 'react';
+import ProductCard from './components/ProductCard.jsx'; // adjust path if needed
+import './App.css'; // optional CSS for App styling
 
 function App() {
   return (
-    <div className="container">
-      <h2 className="title">Products List</h2>
-      <div className="product-list">
-        <ProductCard name="Wireless Mouse" price={25.99} inStock={true} />
-        <ProductCard name="Keyboard" price={45.5} inStock={false} />
-        <ProductCard name="Monitor" price={199.99} inStock={true} />
-      </div>
+    <div className="App">
+      <h1>Welcome to My React App</h1>
+      {/* Example usage of ProductCard component */}
+      <ProductCard
+        name="Sample Product"
+        price={99.99}
+        inStock={true}
+      />
     </div>
   );
 }
 
 export default App;
-
-
-
-
