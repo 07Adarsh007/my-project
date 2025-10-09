@@ -1,0 +1,47 @@
+Title:
+JWT Authentication for Secure Banking API Endpoints
+
+Objective:
+- To implement secure authentication in an Express.js application using JSON Web Tokens (JWT).
+- To learn how to generate, sign, and verify JWT tokens.
+- To protect sensitive banking API endpoints from unauthorized access.
+- To understand error handling for authentication and banking operations.
+
+Task Description:
+1. Create an Express.js banking API with the following routes:
+   - /login: Accepts a username and password and returns a JWT token upon successful login.
+   - /balance: Returns the user's account balance (protected).
+   - /deposit: Allows depositing money into the account (protected).
+   - /withdraw: Allows withdrawing money from the account (protected).
+2. Use a hardcoded username and password for authentication (for demonstration purposes).
+3. Generate a JWT token upon successful login with an expiration time.
+4. Implement middleware to verify the JWT token from the Authorization header before accessing protected routes.
+5. Handle common errors:
+   - Missing Authorization header
+   - Invalid or expired JWT token
+   - Insufficient balance during withdrawal
+6. Test the API using curl or Postman:
+   - First login to obtain the JWT token.
+   - Include the token as a Bearer token in Authorization header for all protected routes.
+   - Verify correct responses for deposits, withdrawals, and balance checks.
+
+Expected Output:
+- Successful login returns a signed JWT token.
+- Protected routes are accessible only with a valid JWT token.
+- Error messages are displayed for missing/invalid tokens or insufficient balance.
+- Deposit and withdrawal operations update and reflect the account balance accurately.
+
+Key Learning Points:
+- How JWT-based authentication works in Node.js/Express.js.
+- How to implement secure route protection using middleware.
+- How to handle errors for authentication and banking operations.
+- How to build a simple secure banking API backend for demonstration purposes.
+
+Sample Test:
+1. POST /login with correct credentials → Response: { "message": "Login successful", "token": "<JWT token>" }
+2. GET /balance with token → Response: { "balance": 1000 }
+3. POST /deposit 200 with token → Response: { "message": "Deposited 200 successfully", "balance": 1200 }
+4. POST /withdraw 500 with token → Response: { "message": "Withdrew 500 successfully", "balance": 700 }
+5. POST /withdraw 1000 with token → Response: { "error": "Insufficient balance" }
+6. Access any protected route without token → Response: { "error": "Authorization header missing" }
+7. Access any protected route with invalid token → Response: { "error": "Invalid or expired token" }

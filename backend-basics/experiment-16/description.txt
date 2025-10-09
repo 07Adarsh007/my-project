@@ -1,0 +1,42 @@
+Title:
+Middleware Implementation for Logging and Bearer Token Authentication
+
+Objective:
+- To understand the concept of middleware in Express.js.
+- To implement request logging for all incoming HTTP requests.
+- To implement Bearer token authentication to protect specific routes.
+- To learn how middleware can enforce security and validate requests.
+
+Task Description:
+1. Create an Express.js server.
+2. Implement a global logging middleware that logs:
+   - HTTP method (GET, POST, etc.)
+   - Request URL
+   - Timestamp of the request
+3. Implement an authentication middleware that:
+   - Checks the Authorization header for a Bearer token.
+   - Allows access to protected routes only if the token matches "mysecrettoken".
+   - Returns appropriate error messages for missing or invalid tokens.
+4. Create two routes:
+   - Public route: accessible without authentication.
+   - Protected route: accessible only with the correct Bearer token.
+5. Apply the logging middleware globally and authentication middleware only on protected routes.
+6. Test the routes using curl or Postman to demonstrate logging and secure access control.
+
+Expected Output:
+- Logs appear in the console for every request with HTTP method, URL, and timestamp.
+- Public route can be accessed without a token.
+- Protected route allows access only when the correct token is provided.
+- Requests with missing or invalid tokens are denied with proper error messages.
+
+Key Learning Points:
+- How middleware works in Express.js.
+- Difference between global and route-specific middleware.
+- How to implement simple token-based route protection.
+- How to debug and monitor requests using logging middleware.
+
+Sample Test:
+1. Access public route: GET /public → Response: "This is a public route accessible by anyone."
+2. Access protected route without token → Response: { "error": "Authorization header missing" }
+3. Access protected route with wrong token → Response: { "error": "Invalid token" }
+4. Access protected route with correct token → Response: "This is a protected route. You provided the correct Bearer token!"
