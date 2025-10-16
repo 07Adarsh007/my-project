@@ -9,15 +9,21 @@
 </head>
 
 <body>
-
     <main class="card">
-        <div class="balance">$0</div>
+        <h2>Account Balance</h2>
+        <div class="balance" id="balance">$0</div>
+
+        <div class="transaction">
+            <input type="number" id="amount" placeholder="Enter amount" min="1">
+        </div>
+
         <div class="actions">
-            <button class="btn deposit-btn">Deposit</button>
-            <button class="btn withdraw-btn">Withdraw</button>
+            <button class="btn deposit-btn" id="depositBtn">Deposit</button>
+            <button class="btn withdraw-btn" id="withdrawBtn">Withdraw</button>
         </div>
     </main>
 
+    <script src="script.js"></script>
 </body>
 
 </html>
