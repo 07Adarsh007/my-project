@@ -1,0 +1,4 @@
+In this experiment, I learned how to package a React application into a lightweight, production-ready Docker image using a multi-stage build.
+The first stage uses Node.js to install dependencies and build the optimized production files, while the second stage uses Nginx to serve the static files efficiently.
+This approach minimizes image size, removes unnecessary build dependencies from the runtime environment, and provides a clear separation between the build and deployment processes.
+By testing the final image locally on Docker, I verified that the app runs correctly at http://localhost, demonstrating how Docker simplifies cross-environment deployment.
