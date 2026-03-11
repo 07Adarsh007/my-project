@@ -1,0 +1,13 @@
+{
+  "name": "experiment-06",
+  "version": "1.0.0",
+  "description": "Experiment_06 minimal project",
+  "main": "server.js",
+  "scripts": {
+    "server": "node server.js",
+    "client": "cd \"form validation\" && npm run dev",
+    "dev": "node server.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
